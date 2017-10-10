@@ -10,33 +10,25 @@ const middleware = require('graphql-voyager/middleware');
 
 let schema = buildSchema(`
   type Query {
-    post: Post,
-    comments: [Comment]
+    title: String!,
+    notes: [Note]
   }
   
-  type Post {
+  type Note {
     id: String!,
-    title: String,
-    body: String
-  }
-  
-  type Comment {
-    id: String!,
-    comment: String,
+    note: String,
     author: String
   }
 `)
 
 const root = {
-  post: () => {
-    return {
-      id: '1',
-      title: 'Thoughts from NordicAPIs',
-      body: 'Hello from strockholm'
-    }
+  title: () => {
+      return 'Thoughts and notes from NordicAPIs';
   },
-  comments: () => [
-    {id: '1', comment: 'Gott kaffe', author: 'Johannes'},
+  notes: () => [
+    {id: '1', note: 'Gott kaffe', author: 'Johannes'},
+    {id: '2', note: '"kill your servers"', author: 'Johannes'},
+    {id: '2', note: 'graphql voyager seems really good. Easy to setup in express', author: 'Johannes'},
   ]
 }
 
