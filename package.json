@@ -4,7 +4,8 @@
   "description": "GraphQL testing in node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "MIT",
@@ -12,6 +13,7 @@
     "express": "^4.16.2",
     "express-graphql": "^0.6.11",
     "graphql": "^0.11.7",
-    "graphql-voyager": "^1.0.0-rc.9"
+    "graphql-voyager": "^1.0.0-rc.9",
+    "nodemon": "^1.12.1"
   }
 }
