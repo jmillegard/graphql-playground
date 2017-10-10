@@ -48,7 +48,7 @@ app.use('/graphql', graphqlHTTP({
   graphiql: true
 }))
 
-http.createServer(app).listen(3333, () => {
+http.createServer(app).listen(process.env.PORT || 3333, () => {
   console.log('app started...')
 })
 
