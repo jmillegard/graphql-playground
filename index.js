@@ -28,7 +28,8 @@ const root = {
   notes: () => [
     {id: '1', note: 'Gott kaffe', author: 'Johannes'},
     {id: '2', note: '"kill your servers"', author: 'Johannes'},
-    {id: '2', note: 'graphql voyager seems really good. Easy to setup in express', author: 'Johannes'},
+    {id: '3', note: 'graphql voyager seems really good. Easy to setup in express', author: 'Johannes'},
+    {id: '4', note: 'If your frontend developers want REST, give them REST. If they want graphQL, then give them graphQL', author: 'Johannes'},
   ]
 }
 
