@@ -12,6 +12,12 @@ let schema = buildSchema(`
   type Query {
     title: String!,
     notes: [Note]
+    cars: [Car]
+  }
+
+  type Car {
+    id: String!,
+    name: String
   }
   
   type Note {
@@ -30,9 +36,18 @@ const root = {
     {id: '2', note: '"kill your servers"', author: 'Johannes'},
     {id: '3', note: 'graphql voyager seems really good. Easy to setup in express', author: 'Johannes'},
     {id: '4', note: 'If your frontend developers want REST, give them REST. If they want graphQL, then give them graphQL', author: 'Johannes'},
+  ],
+  cars: () => [
+    {id: '1', name: 'Volvo'}
   ]
 }
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS,COPY')
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+  next()
+})
 app.use('/voyager', middleware.express({ endpointUrl: '/graphql' }));
 
 app.use('/graphql', graphqlHTTP({
